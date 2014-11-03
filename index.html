@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title></title>
+
+	<!-- .less file -->
+
+	<link rel="stylesheet/less" type="text/css" href="assets/less/style.less" />
+
+	<!-- js vendor -->
+
+	<script src="assets/js/less.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+
+
+
+	<!-- js file -->
+
+
+
+	<script>
+
+		// function append() {
+		// 	$('.page-content').selection().append('haii');
+		// }
+
+		// function append() {
+		// 	alert('a');
+		// 	alert($('.page-content').createTextRange());
+		// }
+
+
+	</script>
+
+</head>
+<body>
+
+	<div class="header">
+		<div class="navbar">
+			<div class="navbar-navigator">
+				<ul class="navigator-item">
+					<li onclick="show_navbar_content('content-menu-utama')">Menu Utama</li>
+					<li onclick="show_navbar_content('content-dokumen')">Dokumen</li>
+					<li onclick="show_navbar_content('content-konten')">Konten</li>
+					<li onclick="show_navbar_content('content-bantuan')">Bantuan</li>
+				<ul>
+			</div>
+			<div class="navbar-content">
+				<div class="content-item" id="content-menu-utama">
+					<ul>
+						<li><button onclick="highlight('#ff0')">Baru</button></li>
+						<li><button onclick="test()">Simpan</button></li>
+						<li><button onclick="test()">Buka</button></li>
+						<li onclick="append()">as</li>
+					</ul>
+				</div>
+				<div class="content-item hidden" id="content-dokumen">
+					<ul>
+						<li onclick="text_bold()">Elemen</li>
+						<li onclick="tambah_halaman()" >Tambah Halaman</li>
+						<li>Hapus Halaman</li>
+					</ul>
+				</div>
+				<div class="content-item hidden" id="content-konten">
+					<ul>
+						<li>Jenis</li>
+						<li>Konten</li>
+						<li>Lihat Referensi</li>
+						<li>Peletakan</li>
+						<li>Tambah Konten</li>
+					</ul>
+				</div>
+				<div class="content-item hidden" id="content-bantuan">
+					<ul>
+						<li>Bantuan</li>
+						<li>About</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="body">
+		<script src="assets/ckeditor/ckeditor.js"></script>
+		<div class="page">
+			<textarea name="article-body" style="width: 170mm; height: 257mm; border-color:red;">
+
+			</textarea>
+		</div>
+		<script>
+			CKEDITOR.inline( 'article-body' );
+		</script>
+
+	</div>
+
+
+
+
+
+</body>
+</html>
