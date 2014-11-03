@@ -4,6 +4,29 @@
 @navbar-horizontal-padding:10px;
 @navbar-width:100%;
 
+@sidebar-horizontal-padding: 10px;
+@sidebar-vertical-padding:15px;
+
+.padding-horizontal(@padding-horizontal) {
+	padding-left:@padding-horizontal;
+	padding-right:@padding-horizontal;
+}
+
+.padding-vertical(@padding-vertical) {
+	padding-top:@padding-vertical;
+	padding-bottom:@padding-vertical;
+}
+
+.margin-horizontal(@margin-horizontal) {
+	margin-left:@margin-horizontal;
+	margin-right:@margin-horizontal;
+}
+
+.margin-vertical(@margin-vertical) {
+	margin-top:@margin-vertical;
+	margin-bottom:@margin-vertical;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -23,6 +46,9 @@ body {
 	width: 100%;
 	height: @tinggi-header;
 	background-color: red;
+
+	float:left;
+	position:fixed;
 
 	.navbar {
 		width: @navbar-width;
@@ -114,10 +140,83 @@ body {
 
 }
 
+.sidebar {
+	width:300px;
+	height: calc(~'100% - ' @tinggi-header);
+
+	background: rgba(0,0,0,0.8);
+
+	position:fixed;
+	float:left;
+
+	top:100px;
+
+	&.hide {
+		display:none;
+	}
+
+	&.show {
+		display:block;
+	}
+
+
+	.sidebar-title {
+		width: calc(~'100% - ' (@sidebar-horizontal-padding * 2));
+
+		.padding-vertical(@sidebar-vertical-padding);
+		.padding-horizontal(@sidebar-horizontal-padding);
+
+		background-color:white;
+
+		float:left;
+
+	}
+
+	.sidebar-wrapper {
+		width:100%;
+		height:calc(~'100% - 48px');
+
+
+		float:left;
+
+		overflow:auto;
+
+		background-color:red;
+
+		.sidebar-item {
+			width: calc(~'100% - ' (@sidebar-horizontal-padding * 2));
+			.padding-vertical(@sidebar-vertical-padding);
+			.padding-horizontal(@sidebar-horizontal-padding);
+
+			float:left;
+
+			img {
+
+				width:100%;
+				float:left;
+
+			}
+			label {
+				width: calc(~'100% - ' (@sidebar-horizontal-padding * 2));
+				.padding-vertical(@sidebar-vertical-padding);
+				.padding-horizontal(@sidebar-horizontal-padding);
+
+				float:left;
+
+				background-color:white;
+			}
+		}
+
+
+	}
+}
+
 .body {
 	width: 100%;
-	padding-top: 10px;
+	padding-top: 120px;
 	padding-bottom: 10px;
+
+
 
 	.page {
 
